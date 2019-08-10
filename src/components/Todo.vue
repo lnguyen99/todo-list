@@ -1,6 +1,10 @@
 <template>
     <div>
         <ul style="list-style: none; padding: 0 40px;" >
+            <li>
+                <input class="input-field" v-model="name" @keyup.enter.prevent="addNewTask"
+                       placeholder="Enter to add new task">
+            </li>
             <li class="btn" v-for="(task, index) in getTodoList" :key="index">
 
                 <button class="btn-circle"
@@ -11,10 +15,6 @@
                 {{task.name}}
 
                 <button class="button" @click="remove(index)">X</button>
-            </li>
-            <li>
-                Enter to add new task
-                <input class="input-field" v-model="name" @keyup.enter.prevent="addNewTask">
             </li>
         </ul>
 
@@ -86,6 +86,7 @@
         -webkit-transition:all .2s ease;
         transition:all .2s ease;
     }
+
     .input-field {
         background:rgba(255,255,255,0.1);
         line-height:1.5em;

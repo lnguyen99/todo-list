@@ -1,9 +1,6 @@
 <template>
     <div>
-        <button class="btn-circle"
-                :class="{ completed: allComplete }"
-                @click.prevent="toggleAll">Toggle All</button>
-
+        <button @click.prevent="toggleAll">Toggle All</button>
         <button @click="reset">Delete All</button>
         <Todo></Todo>
 
